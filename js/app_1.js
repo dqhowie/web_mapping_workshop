@@ -10,3 +10,16 @@ var map = L.mapbox.map('map', mapId);
 
 //Set the view of the map to the whole US
 map.setView([39, -96], 4);
+
+var dataFileToAdd = 'bike_routes.geojson'
+
+var featureLayer = L.mapbox.featurelayer().loadURL(dataFileToAdd).addT0(map);
+
+featureLayer.on('ready',function(){this.setStyle({
+  'color': '#erc008c',
+  'fillColor' : '#ec008c',
+  'weight':4,
+  'opacity':7
+});
+map.fitbounds(featureLayer.getBounds());
+});
