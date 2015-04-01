@@ -13,7 +13,7 @@ map.setView([39, -96], 4);
 
 var dataFileToAdd = 'bike_routes.geojson'
 
-var featureLayer = L.mapbox.featurelayer().loadURL(dataFileToAdd).addT0(map);
+var featureLayer = L.mapbox.featurelayer().loadURL(dataFileToAdd).addTo(map);
 
 featureLayer.on('ready',function(){this.setStyle({
   'color': '#erc008c',
